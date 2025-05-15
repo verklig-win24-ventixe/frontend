@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  /* Font */
+  --font: "Inter", sans-serif;
+
+  /* Primary */
+  --primary-color-100: #F26CF9;
+  --primary-color-90: #F589FA;
+  --primary-color-50: #FCD3FE;
+  --primary-color-40: #FCE2FE;
+  --primary-color-30: #FDEDFE;
+
+  /* Secondary */
+  --secondary-color-110: #1C2346;
+  --secondary-color-100: #37437D;
+  --secondary-color-90: #5562A2;
+  --secondary-color-70: #707DBF;
+  --secondary-color-60: #ABB4DD;
+  --secondary-color-50: #D3DAF9;
+
+  /* Yellow */
+  --yellow-color-100: #FFCA39;
+  --yellow-color-90: #FFEFC3;
+
+  /* Gray */
+  --gray-color-10: #FFFFFF;
+  --gray-color-20: #F7F7F7;
+  --gray-color-30: #EDEDED;
+  --gray-color-40: #E0E0E1;
+  --gray-color-50: #C3C3C4;
+  --gray-color-60: #9F9FA1;
+  --gray-color-70: #777779;
+  --gray-color-80: #636365;
+  --gray-color-90: #434345;
+  --gray-color-100: #1E1E20;
+
+  /* Cool Gray */
+  --coolgray-color-10: #EEEFFF;
+  --coolgray-color-20: #E4E5F5;
+  --coolgray-color-30: #DDDEED;
+  --coolgray-color-40: #D1D2E0;
+  --coolgray-color-50: #B0B1BD;
+  --coolgray-color-60: #8F8F99;
+  --coolgray-color-70: #72737A;
+  --coolgray-color-80: #56565C;
+  --coolgray-color-90: #39393D;
+  --coolgray-color-100: #131314;
+
+  /* Text */
+  --text-color: var(--gray-color-100);
+  --muted-text-color: var(--gray-color-60);
+  --headline-text-color: var(--secondary-color-100);
+
+  /* Background */
+  --background-color: var(--gray-color-10);
+  --nav-background-color: var(--coolgray-color-20);
+  --header-background-color: var(--gray-color-20);
+  --main-background-color: var(--gray-color-20);
+  --footer-background-color: var(--gray-color-20);
+  --section-background-color: var(--gray-color-20);
+
+  /* Button - text */
+  --button-text-color: var(--gray-color-90);
+  --button-link-text-color: var(--primary-color-100);
+  --button-primary-text-color: var(--gray-color-10);
+  --button-secondary-text-color: var(--secondary-color-100);
+  --button-outline-text-color: var(--gray-color-90);
+
+  /* Button - background */
+  --button-background-color: transparent;
+  --button-link-background-color: transparent;
+  --button-primary-background-color: var(--primary-color-100);
+  --button-secondary-background-color: var(--coolgray-color-10);
+  --button-outline-background-color: transparent;
+
+  /* Button - border */
+  --button-border-color: transparent;
+  --button-link-border-color: transparent;
+  --button-primary-border-color: var(--primary-color-100);
+  --button-secondary-border-color: var(--coolgray-color-10);
+  --button-outline-border-color: var(--gray-color-30);
+
+  /* Button - hover */
+  --button-hover-text-color: var(--gray-color-90);
+  --button-hover-border-color: transparent;
+  --button-hover-background-color: transparent;
+  --button-link-hover-text-color: var(--primary-color-100);
+  --button-link-hover-background-color: transparent;
+  --button-link-hover-border-color: transparent;
+  --button-primary-hover-text-color: var(--gray-color-10);
+  --button-primary-hover-border-color: var(--primary-color-90);
+  --button-primary-hover-background-color: var(--primary-color-90);
+
+  /* Border */
+  --border-color: var(--gray-color-40);
+
+  /* Card - background */
+  --card-background-color: var(--gray-color-10);
+
+  /* Card - border */
+  --card-border-color: var(--gray-color-20);
+
+  /* Separator - text */
+  --separator-text-color: var(--gray-color-60);
+
+  /* Separator - background */
+  --separator-background-color: var(--gray-color-10);
+
+  /* Separator - border */
+  --separator-border-color: var(--gray-color-40);
+
+  /* Link - text */
+  --link-text-color: var(--primary-color-100);
+
+  /* Link - hover */
+  --link-hover-text-color: var(--primary-color-90);
+
+  /* Input - text */
+  --input-text-color: var(--gray-color-100);
+
+  /* Input - background */
+  --input-background-color: var(--gray-color-10);
+
+  /* Input - border */
+  --input-border-color: var(--gray-color-40);
+
+  /* Input - placeholder */
+  --input-placeholder-color: var(--gray-color-50);
+
+  /* Input - focus */
+  --input-border-focus-color: var(--primary-color-50);
+
+  /* Checkbox - background */
+  --checkbox-background-color: var(--gray-color-10);
+
+  /* Checkbox - border */
+  --checkbox-border-color: var(--gray-color-40);
+
+  /* Checkbox - checked */
+  --checkbox-checked-background-color: var(--primary-color-100);
+  --checkbox-checked-border-color: var(--primary-color-100);
+  --checkbox-checked-text-color: var(--gray-color-10);
+}
+
+*, *::before *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: var(--font);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.portal-wrapper {
+  display: grid;
+  gap: 1rem;
+  height: 100dvh;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "nav" "main" "footer";
+
+  @media (width >= 768px) {
+    grid-template-columns: 250px 1fr;
+    grid-template-areas: "nav header" "nav main" "nav footer";
+  }
+
+  @media (width >= 1400px) {
+    grid-template-columns: 80px 1fr;
+    grid-template-areas: "nav header" "nav main" "nav footer";
+  }
+}
+
+.center-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
+nav {
+  grid-area: nav;
+  background-color: var(--nav-backround-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+header {
+  grid-area: header;
+  background-color: var(--header-backround-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+main {
+  grid-area: main;
+  background-color: var(--main-backround-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--footer-backround-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
