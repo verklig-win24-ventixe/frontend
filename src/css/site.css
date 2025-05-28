@@ -143,6 +143,13 @@ html, body {
   background-color: var(--background-color);
 }
 
+.center-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+}
+
 .portal-wrapper {
   display: grid;
   gap: 1rem;
@@ -209,13 +216,6 @@ footer {
 .hidden {
   visibility: hidden !important;
   display: none !important;
-}
-
-.center-screen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100dvh;
 }
 
 .surface {
@@ -305,7 +305,7 @@ footer {
       }
     }
 
-    .card-destination {
+    .card-location {
       display: flex;
       align-items: center;
       gap: 4px;

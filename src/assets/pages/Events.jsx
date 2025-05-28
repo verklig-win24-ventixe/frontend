@@ -1,15 +1,15 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import EventCard from "../components/EventCard"
 
 function Events() {
   const [events, setEvents] = useState([])
 
   const getEvents = async () => {
-    const res = await fetch("")
+    const res = await fetch("https://verklig-ventixe-eventservice-apdffmbxdzb8epej.swedencentral-01.azurewebsites.net/api/events")
 
     if (res.ok) {
-      const data = await res.json()
-      setEvents(data)
+      const response = await res.json()
+      setEvents(response.result)
     }
   }
 
@@ -18,15 +18,13 @@ function Events() {
   }, [])
 
   return (
-    <main>
-      <div className="event-container">
-        {
-          events.map(event => (
-            <EventCard key={event.id} event={event} />
-          ))
-        }
-      </div>
-    </main>
+    <div className="event-container">
+      {
+        events.map(event => (
+          <EventCard key={event.id} event={event} />
+        ))
+      }
+    </div>
   )
 }
 
