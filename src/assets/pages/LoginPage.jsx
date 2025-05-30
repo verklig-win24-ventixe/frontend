@@ -1,6 +1,6 @@
 import PasswordInput from "../components/PasswordInput"
 
-function Login() {
+function LoginPage() {
   return (
     <div className="surface">
       <h1 className="title flex">Login</h1>
@@ -37,4 +37,4 @@ function Login() {
   )
 }
 
-export default Login
+export default LoginPage

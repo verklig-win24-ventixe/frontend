@@ -3,7 +3,7 @@ import Footer from "../components/Footer"
 import Header from "../components/Header"
 import Nav from "../components/Nav"
 
-const PortalLayout = () =>
+function PortalLayout()
 {
   return (
     <div className="portal-wrapper">

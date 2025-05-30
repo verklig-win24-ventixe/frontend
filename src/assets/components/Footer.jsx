@@ -1,6 +1,8 @@
 function Footer() {
   return (
-    <footer></footer>
+    <footer>
+      <span>Copyright © 2025 Peterdraw</span>
+    </footer>
   )
 }
 

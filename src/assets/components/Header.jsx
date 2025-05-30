@@ -1,7 +1,22 @@
-const Header = () => {
+import { useLocation, useNavigate } from "react-router-dom"
+
+function Header() {
+  const { pathname } = useLocation()
+  const navigate = useNavigate()
+
+  const isGuid = /[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}/i.test(pathname)
+  const isEventDetails = pathname.startsWith('/events/') && isGuid
+  const title = isEventDetails ? "Event Details" : "Events"
+  const showBackArrow = isEventDetails
+
   return (
     <header>
-      <h4 className="title">Events</h4>
+      {showBackArrow && (
+        <button onClick={() => navigate(-1)} className="back-arrow-link">
+          <i className="fa-regular fa-arrow-left"></i>
+        </button>
+      )}
+      <h4 className="title">{title}</h4>
     </header>
   )
 }

@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom"
 
-const CenterLayout = () =>
+function CenterLayout()
 {
   return (
     <div className="center-wrapper">

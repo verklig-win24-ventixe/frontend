@@ -1,7 +1,7 @@
 import ConfirmPasswordInput from "../components/ConfirmPasswordInput"
 import PasswordInput from "../components/PasswordInput"
 
-function Register() {
+function RegisterPage() {
   return (
     <div className="surface">
 
@@ -43,4 +43,4 @@ function Register() {
   )
 }
 
-export default Register
+export default RegisterPage
