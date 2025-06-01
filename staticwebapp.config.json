@@ -1,9 +1,11 @@
 {
-  "routes": {
-    "route": "/",
-    "redirect": "/login",
-    "statusCode": 302
-  },
+  "routes": [
+    {
+      "route": "/",
+      "redirect": "/login",
+      "statusCode": 302
+    }
+  ],
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": ["/images/*", "/css/*", "/js/*", "/api/*"]
