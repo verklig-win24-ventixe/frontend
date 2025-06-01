@@ -1,10 +1,20 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 function EventBookingPage() {
+  const navigate = useNavigate()
   const {id} = useParams()
   const [event, setEvent] = useState([])
-  const [formData, setFormData] = useState({ eventId: id, firstName: '', lastName: '', email: '', streetName: '', postalCode: '', city: ''})
+  const [formData, setFormData] = useState({
+    eventId: id,
+    firstName: '',
+    lastName: '',
+    email: '',
+    streetName: '',
+    postalCode: '',
+    city: '',
+    ticketQuantity: 1
+  })
 
   const getEvent = async () => {
     try {
@@ -37,6 +47,7 @@ function EventBookingPage() {
         console.error("Booking failed.")
       } else {
         console.error("Booking was successful.")
+        navigate("/")
       }
     } catch (err) {
       console.error("Error submitting booking:", err)
