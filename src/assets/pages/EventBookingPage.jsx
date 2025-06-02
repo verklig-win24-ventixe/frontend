@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+import EventDetails from "../components/EventDetails"
+import EventPartners from "../components/EventPartners"
 
 function EventBookingPage() {
   const navigate = useNavigate()
@@ -37,7 +39,7 @@ function EventBookingPage() {
     e.preventDefault()
 
     try {
-      const res = await fetch(`https://verklig-ventixe-bookingservice-apdffmbxdzb8epej.swedencentral-01.azurewebsites.net/api/bookings`, {
+      const res = await fetch(`https://verklig-ventixe-bookingservice-c7dxaafbfde0g0dx.swedencentral-01.azurewebsites.net/api/bookings`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -47,7 +49,8 @@ function EventBookingPage() {
         console.error("Booking failed.")
       } else {
         console.error("Booking was successful.")
-        navigate("/")
+        alert("Booking was made successfully!")
+        navigate("/events")
       }
     } catch (err) {
       console.error("Error submitting booking:", err)
@@ -59,37 +62,45 @@ function EventBookingPage() {
   }, [])
 
   return (
-    <div>
-      <h5>Book Event - {event.title}</h5>
-      <div>
-        <form onSubmit={handleSubmit} noValidate>
-          <div>
+    <div className="event-details-container">
+      <div className="event-packages">
+        <h4 className="event-packages-title">Book Event</h4>
+        <form className="booking-form" onSubmit={handleSubmit} noValidate>
+          <div className="input-container">
             <label htmlFor="firstName">First Name</label>
-            <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required />
+            <input type="text" name="firstName" placeholder="Enter your first name" value={formData.firstName} onChange={handleChange} required />
           </div>
-          <div>
+          <div className="input-container">
             <label htmlFor="lastName">Last Name</label>
-            <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required />
+            <input type="text" name="lastName" placeholder="Enter your last name" value={formData.lastName} onChange={handleChange} required />
           </div>
-          <div>
+          <div className="input-container">
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+            <input type="email" name="email" placeholder="Enter your email address" value={formData.email} onChange={handleChange} required />
           </div>
-          <div>
+          <div className="input-container">
             <label htmlFor="streetName">Street Name</label>
-            <input type="text" name="streetName" value={formData.streetName} onChange={handleChange} required />
+            <input type="text" name="streetName" placeholder="Enter your street name" value={formData.streetName} onChange={handleChange} required />
           </div>
-          <div>
+          <div className="input-container">
             <label htmlFor="postalCode">Postal Code</label>
-            <input type="text" name="postalCode" value={formData.postalCode} onChange={handleChange} required />
+            <input type="text" name="postalCode" placeholder="Enter your postal code" value={formData.postalCode} onChange={handleChange} required />
           </div>
-          <div>
+          <div className="input-container">
             <label htmlFor="city">City</label>
-            <input type="text" name="city" value={formData.city} onChange={handleChange} required />
+            <input type="text" name="city" placeholder="Enter your city" value={formData.city} onChange={handleChange} required />
           </div>
-          <button type="submit">Book Now</button>
+          <div className="input-container">
+            <label htmlFor="ticketQuantity">Ticket Quantity</label>
+            <input type="number" name="ticketQuantity" placeholder="Enter quantity of tickets" value={formData.ticketQuantity} onChange={handleChange} required />
+          </div>
+          <button className="btn btn-primary" type="submit">Book Now</button>
         </form>
       </div>
+
+      <EventDetails event={event} />
+
+      <EventPartners />
     </div>
   )
 }
