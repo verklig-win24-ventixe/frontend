@@ -17,7 +17,7 @@ function EventCard({event}) {
           <span>{event.location}</span>
         </div>
         <div className="card-price">
-          <span>{event.price}</span>
+          <span>50$</span>
         </div>
       </div>
     </Link>

@@ -1,6 +1,6 @@
 function FormattedDate({ dateString }){
   const date = new Date(dateString);
-  if (isNaN(date)) return <span>xx xx, xxxx - xx:xx xx</span>
+  if (isNaN(date)) return <span></span>
 
   const formattedDate = new Intl.DateTimeFormat('en-US', {
     year: 'numeric',

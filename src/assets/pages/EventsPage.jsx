@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
 import EventCard from "../components/EventCard"
 
 function EventsPage() {
-  /* const {id} = useParams() */
   const [events, setEvents] = useState([])
 
   const getEvents = async () => {
