@@ -28,7 +28,7 @@ function EventDetailsPage() {
     <div className="event-details-container">
       <EventDetails event={event} />
 
-      <EventPackages />
+      <EventPackages event={event} />
 
       <EventPartners />
     </div>
