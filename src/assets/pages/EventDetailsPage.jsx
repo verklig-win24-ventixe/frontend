@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import EventPartners from "../components/EventPartners"
 import EventPackages from "../components/EventPackages"
 import EventDetails from "../components/EventDetails"
+import authFetch from "../utils/authFetch"
 
 function EventDetailsPage() {
   const {id} = useParams()
@@ -10,7 +11,7 @@ function EventDetailsPage() {
 
   const getEvent = async () => {
     try {
-      const res = await fetch(`https://verklig-ventixe-eventservice-apdffmbxdzb8epej.swedencentral-01.azurewebsites.net/api/events/${id}`)
+      const res = await authFetch(`https://verklig-ventixe-eventservice-apdffmbxdzb8epej.swedencentral-01.azurewebsites.net/api/events/${id}`)
       if (!res.ok) throw new Error("Failed to fetch event.")
       
       const response = await res.json()

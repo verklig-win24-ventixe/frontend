@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import EventDetails from "../components/EventDetails"
 import EventPartners from "../components/EventPartners"
+import authFetch from "../utils/authFetch"
 
 function EventBookingPage() {
   const navigate = useNavigate()
@@ -20,7 +21,7 @@ function EventBookingPage() {
 
   const getEvent = async () => {
     try {
-      const res = await fetch(`https://verklig-ventixe-eventservice-apdffmbxdzb8epej.swedencentral-01.azurewebsites.net/api/events/${id}`)
+      const res = await authFetch(`https://verklig-ventixe-eventservice-apdffmbxdzb8epej.swedencentral-01.azurewebsites.net/api/events/${id}`)
       if (!res.ok) throw new Error("Failed to fetch event.")
       
       const response = await res.json()
@@ -39,7 +40,7 @@ function EventBookingPage() {
     e.preventDefault()
 
     try {
-      const res = await fetch(`https://verklig-ventixe-bookingservice-c7dxaafbfde0g0dx.swedencentral-01.azurewebsites.net/api/bookings`, {
+      const res = await authFetch(`https://verklig-ventixe-bookingservice-c7dxaafbfde0g0dx.swedencentral-01.azurewebsites.net/api/bookings`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

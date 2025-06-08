@@ -8,6 +8,7 @@ import EventsPage from './assets/pages/EventsPage'
 import EventDetailsPage from './assets/pages/EventDetailsPage'
 import EventBookingPage from './assets/pages/EventBookingPage'
 import DashboardPage from './assets/pages/DashboardPage'
+import PrivateRoute from './assets/components/PrivateRoute'
 
 function App() {
   return (
@@ -18,10 +19,10 @@ function App() {
       </Route>
 
       <Route element={<PortalLayout />}>
-        <Route path='/dashboard' element={<DashboardPage />} />
-        <Route path='/events' element={<EventsPage />} />
-        <Route path='/events/:id' element={<EventDetailsPage />} />
-        <Route path='/events/booking/:id' element={<EventBookingPage />} />
+        <Route path='/dashboard' element={<PrivateRoute><DashboardPage /></PrivateRoute>} />
+        <Route path='/events' element={<PrivateRoute><EventsPage /></PrivateRoute>} />
+        <Route path='/events/:id' element={<PrivateRoute><EventDetailsPage /></PrivateRoute>} />
+        <Route path='/events/booking/:id' element={<PrivateRoute><EventBookingPage /></PrivateRoute>} />
       </Route>
     </Routes>
   )

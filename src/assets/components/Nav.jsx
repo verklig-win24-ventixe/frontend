@@ -1,7 +1,14 @@
-import { NavLink, useLocation } from "react-router-dom"
+import { NavLink, useLocation, useNavigate } from "react-router-dom"
 
 function Nav() {
+  const navigate = useNavigate
   const location = useLocation()
+
+  const logout = () =>
+  {
+    localStorage.removeItem("token")
+    navigate("/login")
+  }
 
   return (
     <nav>
@@ -25,7 +32,7 @@ function Nav() {
         </NavLink>
       </div>
 
-      <button className="btn btn-secondary"><img src="/images/signout-icon.svg" alt="" />Sign Out</button>
+      <button className="btn btn-secondary" onClick={logout}><img src="/images/signout-icon.svg" alt="" />Sign Out</button>
     </nav>
   )
 }
