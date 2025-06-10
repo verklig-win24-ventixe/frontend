@@ -10,7 +10,9 @@ function PortalLayout()
       <Nav />
       <Header />
       <main>
-        <Outlet />
+        <div className="main-scrollable-content">
+          <Outlet />
+        </div>
       </main>
       <Footer />
     </div>

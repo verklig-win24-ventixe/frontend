@@ -1,7 +1,7 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom"
 
 function Nav() {
-  const navigate = useNavigate
+  const navigate = useNavigate()
   const location = useLocation()
 
   const logout = () =>
