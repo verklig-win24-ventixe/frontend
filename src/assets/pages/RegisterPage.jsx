@@ -36,7 +36,7 @@ function RegisterPage() {
     const data = await res.json()
 
     if (res.ok) {
-      alert("Registration successful. You can now log in.")
+      alert("Registration was successful, please check your email to verify your account.")
       navigate("/login")
     } else {
       alert(data.message || "Registration failed.")
